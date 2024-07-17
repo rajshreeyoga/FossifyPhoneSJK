@@ -13,7 +13,7 @@ import org.fossify.phone.R
 import org.fossify.phone.activities.SimpleActivity
 import org.fossify.phone.databinding.ItemConferenceCallBinding
 import org.fossify.phone.extensions.hasCapability
-import org.fossify.phone.helpers.getCallContact
+import org.fossify.phone.helpers.getCallContactNew
 
 class ConferenceCallsAdapter(
     activity: SimpleActivity, recyclerView: MyRecyclerView, val data: ArrayList<Call>, itemClick: (Any) -> Unit
@@ -47,7 +47,7 @@ class ConferenceCallsAdapter(
         val call = data[position]
         holder.bindView(call, allowSingleClick = false, allowLongClick = false) { itemView, _ ->
             ItemConferenceCallBinding.bind(itemView).apply {
-                getCallContact(itemView.context, call) { callContact ->
+                getCallContactNew(itemView.context, call) { callContact ->
                     root.post {
                         itemConferenceCallName.text = callContact.name.ifEmpty { itemView.context.getString(R.string.unknown_caller) }
                         SimpleContactsHelper(activity).loadContactImage(

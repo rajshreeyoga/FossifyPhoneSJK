@@ -687,7 +687,7 @@ class CallActivity : SimpleActivity() {
     private fun updateCallOnHoldState(call: Call?) {
         val hasCallOnHold = call != null
         if (hasCallOnHold) {
-            getCallContact(applicationContext, call) { contact ->
+            getCallContactNew(applicationContext, call) { contact ->
                 runOnUiThread {
                     binding.onHoldCallerName.text = getContactNameOrNumber(contact)
                 }
@@ -701,9 +701,9 @@ class CallActivity : SimpleActivity() {
     }
 
     private fun updateCallContactInfo(call: Call?) {
-        getCallContact(applicationContext, call) { contact ->
+        getCallContactNew(applicationContext, call) { contact ->
             if (call != CallManager.getPrimaryCall()) {
-                return@getCallContact
+                return@getCallContactNew
             }
             callContact = contact
             val avatar = if (!call.isConference()) contact.photoUri else null

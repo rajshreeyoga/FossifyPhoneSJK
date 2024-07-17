@@ -11,6 +11,7 @@ gradlePlugins-agp = "8.3.2"
 #Other
 indicatorFastScroll = "4524cd0b61"
 autofitTextView = "0.2.1"
+okhttp = "4.9.0"
 #build
 app-build-compileSDKVersion = "34"
 app-build-targetSDK = "34"
@@ -31,6 +32,7 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 #Other
 indicator-fast-scroll = { module = "org.fossify:IndicatorFastScroll", version.ref = "indicatorFastScroll" }
 autofit-text-view = { module = "me.grantland:autofittextview", version.ref = "autofitTextView" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 [plugins]
 android = { id = "com.android.application", version.ref = "gradlePlugins-agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

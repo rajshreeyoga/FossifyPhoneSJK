@@ -84,7 +84,7 @@ class CallActivity : SimpleActivity() {
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        updateState()
+//        updateState()
     }
 
     override fun onResume() {
